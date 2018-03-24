@@ -24,5 +24,7 @@ class Persona(models.Model):
                 return "{0}".format(self.fisica.nombre_completo)
             elif hasattr(self, 'compania'):
                 return "{0}".format(self.juridica.nombre_completo)
+            else:
+                return "{}:{}".format(self.codigo_id,self.numero_id)
         except NotImplementedError:
             return _("ERROR! esto no es ni una persona ni una compañía")
