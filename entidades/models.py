@@ -20,11 +20,48 @@ class Persona(models.Model):
 
     def __str__(self):
         try:
-            if hasattr(self, 'persona'):
+            if hasattr(self, 'fisica'):
                 return "{0}".format(self.fisica.nombre_completo)
-            elif hasattr(self, 'compania'):
+            elif hasattr(self, 'juridica'):
                 return "{0}".format(self.juridica.nombre_completo)
             else:
-                return "{}:{}".format(self.codigo_id,self.numero_id)
+                return "{}:{}".format(self.codigo_id, self.numero_id)
         except NotImplementedError:
             return _("ERROR! esto no es ni una persona ni una compañía")
+
+
+class Fisica(Persona):
+    nombre = models.CharField(
+        max_length=150,
+        verbose_name=_("Nombre")
+    )
+    apellido = models.CharField(
+        max_length=150,
+        verbose_name=_("Apellido")
+    )
+
+    @property
+    def nombre_completo(self):
+        return "{}, {}".format(
+            self.apellido.upper(),
+            self.nombre
+        )
+
+    def __str__(self):
+        return self.nombre_completo
+
+
+class Juridica(Persona):
+    razon_social = models.CharField(
+        max_length=150,
+        verbose_name=_("Razón Social")
+    )
+
+    @property
+    def nombre_completo(self):
+        return "{}".format(
+            self.razon_social
+        )
+
+    def __str__(self):
+        return self.nombre_completo

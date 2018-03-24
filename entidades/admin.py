@@ -1,7 +1,12 @@
 from django.contrib import admin
-from entidades.models import Persona
+from entidades.models import Juridica, Fisica
 
 
-@admin.register(Persona)
-class PersonaAdmin(admin.ModelAdmin):
+@admin.register(Juridica)
+class PersonaJuridicaAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Fisica)
+class PersonaFisicaAdmin(admin.ModelAdmin):
     pass
