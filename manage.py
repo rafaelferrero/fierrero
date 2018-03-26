@@ -12,4 +12,15 @@ if __name__ == "__main__":
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+    try:
+        import envdir
+        envdir.open()
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import 'envdir'. Are you sure it's installed? "
+            "take a look if exist 'envdir' directory at the root of the "
+            "project."
+        ) from exc
+
     execute_from_command_line(sys.argv)
