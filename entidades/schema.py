@@ -1,15 +1,21 @@
 # -*- coding: UTF-8 -*
-from graphene_django import DjangoObjectType
+
 import graphene
-from entidades.models import Fisica, Juridica
+from graphene_django import DjangoObjectType
+from entidades.models import Persona, Fisica, Juridica
 
 
-class SchemaPersonaFisica(DjangoObjectType):
+class SchemaPersona(graphene.AbstractType):
+    codigo_id = graphene.String()
+    numero_id = graphene.String()
+
+
+class SchemaPersonaFisica(DjangoObjectType, SchemaPersona):
     class Meta:
         model = Fisica
 
 
-class SchemaPersonaJuridica(DjangoObjectType):
+class SchemaPersonaJuridica(DjangoObjectType, SchemaPersona):
     class Meta:
         model = Juridica
 
