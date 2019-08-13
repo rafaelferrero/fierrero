@@ -1,24 +1,26 @@
-
 const routes = [
   {
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      {
+        path: '',
+        component: () => import('pages/Index.vue')
+      }
     ]
   },
   {
-    path: '/listado/personas',
+    path: '/listados',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
-    ]
-  },
-  {
-    path: '/listado/empresas',
-    component: () => import('layouts/MyLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      {
+        path: 'empresas', // here it is, route /listados/empresas
+        component: () => import('pages/Empresas.vue')
+      },
+      {
+        path: 'personas', // here it is, route /user/posts
+        component: () => import('pages/Personas.vue')
+      }
     ]
   }
 ]

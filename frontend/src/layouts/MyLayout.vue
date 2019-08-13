@@ -27,7 +27,7 @@
     >
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" href="/listado/personas">
+        <q-item clickable tag="a" href="/#/listados/personas">
           <q-item-section avatar>
             <q-icon name="person" />
           </q-item-section>
@@ -36,7 +36,7 @@
             <q-item-label caption>Listado de personas</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" href="/listado/empresas">
+        <q-item clickable tag="a" href="/#/listados/empresas">
           <q-item-section avatar>
             <q-icon name="business" />
           </q-item-section>
