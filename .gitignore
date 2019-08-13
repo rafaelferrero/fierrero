@@ -7,8 +7,8 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -102,3 +102,4 @@ ENV/
 
 envdir/
 db.sqlite3
+.idea/
