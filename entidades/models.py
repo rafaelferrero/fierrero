@@ -33,11 +33,35 @@ class Persona(models.Model):
 class Fisica(Persona):
     nombre = models.CharField(
         max_length=150,
-        verbose_name=_("Nombre")
+        verbose_name=_("Nombre"),
+    )
+    segundo_nombre = models.CharField(
+        max_length=150,
+        verbose_name=_("Segundo Nombre"),
+        null=True,
+        blank=True,
+    )
+    tercer_nombre = models.CharField(
+        max_length=150,
+        verbose_name=_("Tercr Nombre"),
+        null=True,
+        blank=True,
     )
     apellido = models.CharField(
         max_length=150,
-        verbose_name=_("Apellido")
+        verbose_name=_("Apellido"),
+    )
+    segundo_apellido = models.CharField(
+        max_length=150,
+        verbose_name=_("Segundo Apellido"),
+        null=True,
+        blank=True,
+    )
+    tercer_apellido = models.CharField(
+        max_length=150,
+        verbose_name=_("Tercer Apellido"),
+        null=True,
+        blank=True,
     )
 
     @property
